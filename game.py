@@ -28,9 +28,6 @@ def buy_item():
                     products_dict["names"].append(product_name)
                     products_dict["prices"].append(int(price))
                     # print(product_name, price)
-                # product_name = product.find_element(By.CLASS_NAME, value="title.productName")
-                # product_price = product.find_element(By.CLASS_NAME, value=".price")
-                # print(product_price,product_name)
 
     if products_dict["prices"]:
         the_most_expensive = max(products_dict['prices'])
@@ -65,9 +62,7 @@ timeout = time.time() + 5 # >> 5 seconds
 time_end = time.time() + 5*60 # >> 5 minutes
 
 cookie = driver.find_element(By.ID, value="bigCookie")
-# cursor = driver.find_element(By.)
-# cookie.click()
-# time.sleep(3)
+
 while True:
     cookie.click()
     if time.time() > timeout:
@@ -90,4 +85,5 @@ time.sleep(5)
 driver.quit()
 
 # cookies/second: 9.1 bez timeout refresh()
+
 # cookies/second: 14.5 timetout refresh()
